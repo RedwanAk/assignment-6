@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -45,12 +46,12 @@ const Page = () => {
 
           {/* Calories */}
           <div className="flex flex-col justify-between pt-4 md:pt-0 md:pl-6">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider">
               Calories
-            </span>
-            <span className="text-3xl font-bold text-white mt-2">
+            </p>
+            <p className="text-3xl font-bold text-white mt-2">
               190
-            </span>
+            </p>
           </div>
 
         </div>
@@ -106,9 +107,9 @@ const Page = () => {
           <p className="text-gray-400 text-xs mt-2 max-w-sm">
             Browse the library and add a lift to get today moving.
           </p>
-          <button className="mt-6 bg-[#ccff00] hover:bg-[#b8e600] text-black font-semibold text-xs py-2.5 px-6 rounded-full transition-transform active:scale-95 shadow-lg shadow-[#ccff00]/10">
+          <Link href="/" className="mt-6 bg-[#ccff00] hover:bg-[#b8e600] text-black font-semibold text-xs py-2.5 px-6 rounded-full transition-transform active:scale-95 shadow-lg shadow-[#ccff00]/10">
             Go to workouts
-          </button>
+          </Link>
         </div>
 
       </div>

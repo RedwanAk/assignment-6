@@ -11,7 +11,7 @@ const Footer = () => {
       <p className="font-bold">FITLOG</p>
     </div>
     
-    <p className="text-[#6B7280]">Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p className="text-[#6B7280] text-sm">Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
   
   </aside>
 
