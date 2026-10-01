@@ -2,12 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from "@/app/assets/logo.png";
 import { usePathname } from 'next/navigation';
+import { CardContext } from '@/context/CardContext';
 
 const Navbar = () => {
   const pathname = usePathname();
+  const cardContext = useContext(CardContext);
+  if (!cardContext) {
+    throw new Error('Navbar must be used within CardProvider.');
+  }
+  const { PlanCards, Saved } = cardContext;
 
   // Active link styles
   const activeClass = "bg-[#1A2312] text-[#C2F800] rounded-3xl font-medium px-4 py-2";
@@ -59,8 +65,8 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end flex gap-4">
-        <a>Plan <span className="badge bg-[#C2F800] text-black">{0}</span></a>
-        <a>Saved <span className="badge border border-[#2D313B]">{0}</span></a>
+        <span>Plan <span className="badge bg-[#C2F800] text-black">{PlanCards.length}</span></span>
+        <span>Saved <span className="badge border border-[#2D313B]">{Saved.length}</span></span>
       </div>
     </div>
   );

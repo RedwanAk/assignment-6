@@ -1,3 +1,5 @@
+import Planbutton from '@/app/components/WorkoutOptions/Planbutton';
+import SaveButton from '@/app/components/WorkoutOptions/SaveButton';
 import Image from 'next/image';
 import React from 'react';
 
@@ -139,18 +141,8 @@ const Page = async ({ params }: WorkoutPageProps) => {
 
                     {/* Action Buttons */}
                     <div className="flex items-center gap-3 pt-4">
-                        <button className="flex-1 bg-[#ccff00] hover:bg-[#b3e600] text-black font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            Add to today&apos;s plan
-                        </button>
-                        <button className="flex-1 bg-transparent border border-gray-700 hover:bg-gray-800 text-gray-300 font-semibold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                            </svg>
-                            Save for later
-                        </button>
+                            <Planbutton data={workout}/>
+                            <SaveButton data={workout}/>
                     </div>
                 </div>
 
